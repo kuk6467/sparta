@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+    ```html
+    <!-- HTML에 이 부분을 추가하고 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    ```
+    <style>
+
+            /* CSS에 이 부분을 추가하면 완성! */
+        * {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+
+
+        .mytitle {
+            color: white;
+            font-size: 20px;
+
+            /*
+            # 배경 관련
+            */
+            /*background-color: black;*/
+            background-image: url("https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg");
+            background-size: cover;
+            background-position: center;
+            /*
+            # 사이즈
+            */
+            width: 300px;
+            height: 200px;
+            text-align: center;
+
+            border-radius: 10px;
+            padding-top: 20px;
+
+        }
+
+        .wrap {
+            margin: 300px;
+            width: auto;
+        }
+
+        .mybtn {
+            width: 100px;
+            margin-top: 20px;
+            margin: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="mytitle">
+        <h3>로그인 페이지</h3>
+        <h5>아이디, 패스워드를 입력 해주세요 </h5>
+    </div>
+
+    <div>
+        <hr>
+        <p>ID : <input type="text"/></p>
+        <p>PW: <input type="text"/></p>
+
+        <button class="mybtn"> 로그인하기</button>
+    </div>
+</div>
+
+
+</body>
