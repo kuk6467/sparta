@@ -18,23 +18,25 @@ def home():
 @app.route('/api/list', methods=['GET'])
 def show_stars():
     movie_star = list(db.mystar.find({}, {'_id':False}).sort('like', -1))
-    sample_receive = request.args.get('sample_give')
-    print(sample_receive)
-    return jsonify({'movie_stars':movie_star})
+    return jsonify({'movie_stars': movie_star})
 
 
 @app.route('/api/like', methods=['POST'])
 def like_star():
-    sample_receive = request.form['sample_give']
-    print(sample_receive)
-    return jsonify({'msg': 'like 연결되었습니다!'})
+    name_receive = request.form['name_give']
+    target_star = db.mystar.find_one({'name':name_receive})
+    current_like = target_star['like']
+
+    new_like = current_like + 1
+    db.mystar.update_one({'name': name_receive}, {'$set': {'like': new_like}})
+    return jsonify({'msg': '좋아요 완료!!'})
 
 
 @app.route('/api/delete', methods=['POST'])
 def delete_star():
-    sample_receive = request.form['sample_give']
-    print(sample_receive)
-    return jsonify({'msg': 'delete 연결되었습니다!'})
+    name_receive = request.form['name_give']
+    db.mystar.delete_one({'name':name_receive})
+    return jsonify({'msg': '삭제 완료!'})
 
 
 if __name__ == '__main__':
