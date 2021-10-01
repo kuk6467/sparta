@@ -17,14 +17,7 @@ for movie in movies:
     # movie 안에 a 가 있으면,
     a_tag = movie.select_one('td.title > div > a')
     if a_tag is not None:
-<<<<<<< Updated upstream:pythonprac/3-8_beautifulsoup4_pakage.py
         rank = movie.select_one('td:nth-child(1) > img')['alt'] # img 태그의 alt 속성값을 가져오기
         title = a_tag.text                                      # a 태그 사이의 텍스트를 가져오기
         star = movie.select_one('td.point').text                # td 태그 사이의 텍스트를 가져오기
         print(rank,title,star)
-=======
-        rank = tr.select_one('td:nth-child(1) > img')['alt']
-        star = tr.select_one('td.point').text
-        title = a_tag.text
-        print(rank, title, star)
->>>>>>> Stashed changes:pythonprac/3주차/3-8_beautifulsoup4_pakage.py
